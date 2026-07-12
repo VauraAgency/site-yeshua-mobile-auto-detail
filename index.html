@@ -4,86 +4,194 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yeshua Mobile Auto Detail | Auto Detailing</title>
-<meta name="description" content="Yeshua Mobile Auto Detail in 4965 3rd St NE, Fridley, MN 55421, USA. Trusted local Auto Detailing.">
+<meta name="description" content="Yeshua Mobile Auto Detail in 4965 3rd St NE, Fridley, MN 55421, USA. Local auto detailing serving Fridley.">
 <meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Sora:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Yeshua Mobile Auto Detail", "address": "4965 3rd St NE, Fridley, MN 55421, USA", "telephone": "(619) 538-9104", "aggregateRating": {"@type": "AggregateRating", "ratingValue": 5, "reviewCount": 1}}</script>
 <style>
-  :root { --primary: #141414; --accent: #d62828; --bg: #f2f2f2; --text: #141414; }
+  :root {
+    --primary: #141414; --accent: #d62828; --bg: #f2f2f2; --text: #141414;
+    --display-font: 'Oswald', Arial, sans-serif;
+    --body-font: 'Barlow', Arial, sans-serif;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Oswald', Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-  header.hero { background: var(--primary); color: #fff; padding: 100px 0 80px; text-align: center; }
-  header.hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 12px; }
-  header.hero p.tagline { font-size: 1.2rem; opacity: 0.9; margin-bottom: 28px; }
-  .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .btn { display: inline-block; padding: 14px 28px; border-radius: 6px; font-weight: 600; text-decoration: none; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body-font); background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  h1, h2, .display { font-family: var(--display-font); }
+
+  nav.topbar { position: sticky; top: 0; z-index: 20; background: var(--primary); color: #fff; height: 64px; display: flex; align-items: center; }
+  nav.topbar .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  nav.topbar .brand { font-family: var(--display-font); font-weight: 600; font-size: 1.15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 13px 26px; border-radius: 999px; font-weight: 600; font-size: 0.95rem; text-decoration: none; white-space: nowrap; transition: transform 0.15s ease, opacity 0.15s ease; }
+  .btn:active { transform: scale(0.97); }
   .btn-primary { background: var(--accent); color: #fff; }
-  .btn-secondary { background: transparent; color: #fff; border: 2px solid #fff; }
-  section { padding: 64px 0; }
-  h2 { font-size: 2rem; margin-bottom: 24px; color: var(--primary); }
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-  .service-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; padding: 24px; text-align: center; font-weight: 600; color: var(--primary); }
-  .reviews-section { background: rgba(0,0,0,0.03); }
-  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-  .review-card { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-  .review-stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 8px; }
-  .review-author { margin-top: 10px; font-size: 0.9rem; opacity: 0.7; }
-  .rating-summary { text-align: center; margin-bottom: 32px; font-size: 1.1rem; }
-  .rating-summary strong { color: var(--accent); font-size: 1.4rem; }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-  .contact-grid iframe { width: 100%; height: 320px; border: 0; border-radius: 8px; }
-  .map-link { display: flex; align-items: center; justify-content: center; height: 320px; background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; color: var(--primary); font-weight: 600; text-decoration: none; }
-  .contact-info p { margin-bottom: 12px; }
-  .hours-list { list-style: none; margin-top: 12px; }
-  footer { background: var(--primary); color: #fff; text-align: center; padding: 32px 0; font-size: 0.9rem; }
-  @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; } }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); }
+  .btn-ghost:hover { border-color: #fff; }
+
+  header.hero { background: var(--primary); color: #fff; padding: 72px 0 88px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+  .hero-copy h1 { font-size: clamp(2.1rem, 4.4vw, 3.1rem); line-height: 1.08; margin-bottom: 18px; font-weight: 600; }
+  .hero-copy p.tagline { font-size: 1.1rem; opacity: 0.82; max-width: 46ch; margin-bottom: 30px; line-height: 1.5; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-panel { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 16px; padding: 28px; }
+  .hero-stat { display: flex; align-items: baseline; gap: 10px; margin-bottom: 18px; }
+  .hero-stat .num { font-family: var(--display-font); font-size: 2.2rem; font-weight: 600; color: var(--accent); }
+  .hero-stat .label { font-size: 0.92rem; opacity: 0.78; }
+  .hero-panel-row { display: flex; gap: 10px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.92rem; }
+  .hero-panel-row:first-of-type { border-top: none; }
+  .hero-panel-row .k { opacity: 0.6; min-width: 64px; flex-shrink: 0; }
+
+  section { padding: 76px 0; }
+  section.tight { padding: 64px 0; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 600; margin-bottom: 8px; color: var(--primary); }
+  .section-sub { color: rgba(0,0,0,0.55); max-width: 52ch; margin-bottom: 40px; }
+  [data-bg-dark] .section-sub { color: rgba(255,255,255,0.62); }
+
+  .services-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: start; }
+  .services-list { display: flex; flex-direction: column; }
+  .service-row { display: grid; grid-template-columns: 1fr 1.6fr; gap: 24px; padding: 22px 0; border-top: 1px solid rgba(0,0,0,0.09); align-items: baseline; }
+  .service-row:first-child { border-top: none; }
+  .service-row .name { font-family: var(--display-font); font-weight: 600; font-size: 1.05rem; color: var(--primary); }
+  .service-row .blurb { color: rgba(0,0,0,0.62); font-size: 0.95rem; }
+
+  .reviews-section { background: var(--primary); color: #fff; }
+  .reviews-section h2 { color: #fff; }
+  .reviews-scroll { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin: 0 -28px; padding-left: 28px; padding-right: 28px; }
+  .review-card { flex: 0 0 300px; scroll-snap-align: start; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 22px; }
+  .review-stars { color: var(--accent); font-size: 1rem; margin-bottom: 10px; letter-spacing: 1px; }
+  .review-text { font-size: 0.93rem; line-height: 1.55; opacity: 0.92; margin-bottom: 14px; min-height: 3.3em; }
+  .review-author { font-size: 0.85rem; font-weight: 600; }
+  .review-author span { display: block; font-weight: 400; opacity: 0.55; font-size: 0.8rem; margin-top: 2px; }
+  .no-reviews { opacity: 0.75; }
+
+  .contact-layout { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; align-items: start; }
+  .contact-info .row { padding: 16px 0; border-top: 1px solid rgba(0,0,0,0.09); }
+  .contact-info .row:first-child { border-top: none; }
+  .contact-info .k { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(0,0,0,0.45); margin-bottom: 4px; }
+  .contact-info .v { font-size: 1rem; }
+  .contact-info a { color: var(--primary); font-weight: 600; text-decoration: none; }
+  .hours-list { list-style: none; }
+  .hours-list li { font-size: 0.92rem; padding: 2px 0; }
+  .contact-layout iframe { width: 100%; height: 360px; border: 0; border-radius: 14px; }
+  .map-link { display: flex; align-items: center; justify-content: center; height: 360px; background: #fff; border: 1px solid rgba(0,0,0,0.1); border-radius: 14px; color: var(--primary); font-weight: 600; text-decoration: none; }
+
+  footer { border-top: 1px solid rgba(0,0,0,0.08); padding: 28px 0; font-size: 0.85rem; color: rgba(0,0,0,0.5); }
+  footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+
+  [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+  [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 860px) {
+    .hero-grid, .services-layout, .contact-layout { grid-template-columns: 1fr; }
+    header.hero { padding: 48px 0 56px; }
+    .service-row { grid-template-columns: 1fr; gap: 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
 </style>
 </head>
 <body>
-<header class="hero">
+
+<nav class="topbar">
   <div class="container">
-    <h1>Yeshua Mobile Auto Detail</h1>
-    <p class="tagline">Your trusted local Auto Detailing team</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="tel:6195389104">Call (619) 538-9104</a>
-      <a class="btn btn-secondary" href="#contact">Get Directions</a>
+    <span class="brand">Yeshua Mobile Auto Detail</span>
+    <a class="btn btn-primary" href="tel:6195389104">Call (619) 538-9104</a>
+  </div>
+</nav>
+
+<header class="hero" data-bg-dark>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1>Yeshua Mobile Auto Detail</h1>
+      <p class="tagline">Local auto detailing serving Fridley.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:6195389104">Call (619) 538-9104</a>
+        <a class="btn btn-ghost" href="#contact">Get directions</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="hero-stat"><span class="num">5★</span><span class="label">from 1 Google reviews</span></div>
+      <div class="hero-panel-row"><span class="k">Address</span><span>4965 3rd St NE, Fridley, MN 55421, USA</span></div>
+      <div class="hero-panel-row"><span class="k">Phone</span><span>(619) 538-9104</span></div>
+      <div class="hero-panel-row"><span class="k">Hours</span><span>Monday: 4:00 – 7:30 PM</span></div>
     </div>
   </div>
 </header>
+
 <section id="services">
   <div class="container">
-    <h2>Our Services</h2>
-    <div class="services-grid"><div class="service-card">Mobile Service</div>
-<div class="service-card">Full Detailing</div>
-<div class="service-card">Interior & Exterior</div>
-<div class="service-card">Free Quote</div></div>
+    <div data-reveal>
+      <h2>What we do</h2>
+      <p class="section-sub">Core services for auto detailing customers in Fridley.</p>
+    </div>
+    <div class="services-layout">
+      <div></div>
+      <div class="services-list" data-reveal><div class="service-row"><span class="name">Mobile Service</span><span class="blurb">We come to you, home or office.</span></div>
+<div class="service-row"><span class="name">Full Detailing</span><span class="blurb">Interior and exterior, done right.</span></div>
+<div class="service-row"><span class="name">Interior & Exterior</span><span class="blurb">Every surface, inside and out.</span></div>
+<div class="service-row"><span class="name">Free Quote</span><span class="blurb">Know the price before you book.</span></div></div>
+    </div>
   </div>
 </section>
-<section class="reviews-section">
+
+<section class="reviews-section tight" data-bg-dark>
   <div class="container">
-    <h2>What Customers Say</h2>
-    <div class="rating-summary"><strong>5★</strong> average from 1 Google reviews</div>
-    <div class="reviews-grid">
+    <div data-reveal>
+      <h2>What customers say</h2>
+      <p class="section-sub">5★ average across 1 Google reviews.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="reviews-scroll" data-reveal>
     <div class="review-card">
       <div class="review-stars">★★★★★</div>
       <p class="review-text">"The best😎"</p>
-      <p class="review-author">— Yoervis08@gmail.com Martinez, <span>a year ago</span></p>
+      <p class="review-author">Yoervis08@gmail.com Martinez<span>a year ago</span></p>
     </div></div>
   </div>
 </section>
+
 <section id="contact">
   <div class="container">
-    <h2>Visit or Contact Us</h2>
-    <div class="contact-grid">
+    <div data-reveal><h2>Visit or contact us</h2></div>
+    <div class="contact-layout" data-reveal>
       <div class="contact-info">
-        <p><strong>Address:</strong> 4965 3rd St NE, Fridley, MN 55421, USA</p>
-        <p><strong>Phone:</strong> <a href="tel:6195389104">(619) 538-9104</a></p>
-        <p><strong>Hours:</strong></p><ul class="hours-list"><li>Monday: 4:00 – 7:30 PM</li><li>Tuesday: Closed</li><li>Wednesday: 4:00 – 7:30 PM</li><li>Thursday: 4:00 – 7:30 PM</li><li>Friday: Closed</li><li>Saturday: 7:00 AM – 3:30 PM</li><li>Sunday: Closed</li></ul>
+        <div class="row"><div class="k">Address</div><div class="v">4965 3rd St NE, Fridley, MN 55421, USA</div></div>
+        <div class="row"><div class="k">Phone</div><div class="v"><a href="tel:6195389104">(619) 538-9104</a></div></div>
+        <div class="row"><div class="k">Hours</div><ul class="hours-list"><li>Monday: 4:00 – 7:30 PM</li><li>Tuesday: Closed</li><li>Wednesday: 4:00 – 7:30 PM</li><li>Thursday: 4:00 – 7:30 PM</li><li>Friday: Closed</li><li>Saturday: 7:00 AM – 3:30 PM</li><li>Sunday: Closed</li></ul></div>
       </div>
       <iframe loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBVt52zNoH0eoDZkXH8WoRxvtsV9ZK1Iu4&q=place_id:ChIJwwsC500vs1IROTdHzhFHpfw" allowfullscreen></iframe>
     </div>
   </div>
 </section>
-<footer><p>&copy; 2026 Yeshua Mobile Auto Detail. All rights reserved.</p></footer>
+
+<footer>
+  <div class="container">
+    <span>Yeshua Mobile Auto Detail</span>
+    <span>(619) 538-9104</span>
+  </div>
+</footer>
+
+<script>
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+  var els = document.querySelectorAll('[data-reveal]');
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  els.forEach(function(el) { io.observe(el); });
+} else {
+  document.querySelectorAll('[data-reveal]').forEach(function(el) { el.classList.add('is-visible'); });
+}
+</script>
+
 </body>
 </html>
