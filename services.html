@@ -76,6 +76,11 @@
   .service-detail .body { color: rgba(0,0,0,0.62); font-size: 0.95rem; }
   @media (max-width: 760px) { .service-detail-grid { grid-template-columns: 1fr; } }
 
+  .gallery-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 16px; }
+  .gallery-grid img { border-radius: 14px; width: 100%; height: 320px; object-fit: cover; }
+  .gallery-grid img:first-child { height: 320px; }
+  @media (max-width: 760px) { .gallery-grid { grid-template-columns: 1fr; } .gallery-grid img { height: 220px; } }
+
   .about-layout { display: grid; grid-template-columns: 1fr 0.9fr; gap: 48px; align-items: start; }
   .about-layout img { border-radius: 14px; aspect-ratio: 4/3; object-fit: cover; width: 100%; }
   .about-copy p { color: rgba(0,0,0,0.68); margin-bottom: 18px; max-width: 60ch; }
